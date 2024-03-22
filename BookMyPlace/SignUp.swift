@@ -18,6 +18,13 @@ struct SignUp: View {
             Text("Register").font(.system(size: 30))
                 .bold()
                 .padding()
+            
+            Image("one_bajaj_logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 150)
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            
 
             CustomTextFieldView(data: $fullName, title: "Full Name")
             CustomTextFieldView(data: $employeeId, title: "Employee ID")
@@ -40,6 +47,9 @@ struct SignUp: View {
             
             Spacer()
         }
+//        .background(
+//               LinearGradient(gradient: Gradient(colors: [.white, .red, .black]), startPoint: .top, endPoint: .trailing)
+//           )
     }
 }
 
