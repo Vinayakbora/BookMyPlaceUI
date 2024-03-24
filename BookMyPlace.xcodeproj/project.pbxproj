@@ -12,6 +12,7 @@
 		B461F12F2BAD43A900CFEEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B461F12E2BAD43A900CFEEBA /* Assets.xcassets */; };
 		B461F1322BAD43A900CFEEBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B461F1312BAD43A900CFEEBA /* Preview Assets.xcassets */; };
 		B461F1552BAD86F300CFEEBA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461F1542BAD86F300CFEEBA /* SignUp.swift */; };
+		B4A90A872BB02F4800A033BB /* TableTennisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A90A862BB02F4800A033BB /* TableTennisView.swift */; };
 		B4ABFC172BADE74700C2EFC6 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABFC162BADE74700C2EFC6 /* CustomTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		B461F12E2BAD43A900CFEEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B461F1312BAD43A900CFEEBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B461F1542BAD86F300CFEEBA /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		B4A90A862BB02F4800A033BB /* TableTennisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTennisView.swift; sourceTree = "<group>"; };
 		B4ABFC162BADE74700C2EFC6 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +57,7 @@
 		B461F1292BAD43A400CFEEBA /* BookMyPlace */ = {
 			isa = PBXGroup;
 			children = (
+				B4A90A862BB02F4800A033BB /* TableTennisView.swift */,
 				B4ABFC152BADE72800C2EFC6 /* CustomView */,
 				B461F12A2BAD43A400CFEEBA /* BookMyPlaceApp.swift */,
 				B461F12C2BAD43A400CFEEBA /* SignIn.swift */,
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A90A872BB02F4800A033BB /* TableTennisView.swift in Sources */,
 				B461F12D2BAD43A400CFEEBA /* SignIn.swift in Sources */,
 				B461F1552BAD86F300CFEEBA /* SignUp.swift in Sources */,
 				B461F12B2BAD43A400CFEEBA /* BookMyPlaceApp.swift in Sources */,
