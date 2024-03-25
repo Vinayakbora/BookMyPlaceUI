@@ -32,8 +32,8 @@ struct CustomTextFieldView: View{
                 .padding(.horizontal, 10)
                 .frame(height: 55)
                 .overlay(
-                    RoundedRectangle(cornerSize: CGSize(width: 4, height: 4))
-                        .stroke(Color.gray, lineWidth: 1)
+                    RoundedRectangle(cornerSize: CGSize(width: 15, height: 15))
+                        .stroke(Color.gray, lineWidth: 0.5)
                 )
                 
                 HStack {
@@ -98,8 +98,8 @@ struct CustomSecuredTextField: View{
                 .padding(.horizontal, 10)
                 .frame(height: 55)
                 .overlay(
-                    RoundedRectangle(cornerSize: CGSize(width: 4, height: 4))
-                        .stroke(Color.gray, lineWidth: 1)
+                    RoundedRectangle(cornerSize: CGSize(width: 15, height: 15))
+                        .stroke(Color.gray, lineWidth: 0.5)
                 )
                 
                 
