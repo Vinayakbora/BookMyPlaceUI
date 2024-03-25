@@ -51,6 +51,40 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		5B27D2C52BB15F2A00E7A7E1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D2C82BB15F5F00E7A7E1 /* UserAuthentication */,
+				5B27D2C72BB15F4700E7A7E1 /* FunZone */,
+				5B27D2C62BB15F3E00E7A7E1 /* Dashboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5B27D2C62BB15F3E00E7A7E1 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		5B27D2C72BB15F4700E7A7E1 /* FunZone */ = {
+			isa = PBXGroup;
+			children = (
+				B4A90A862BB02F4800A033BB /* TableTennisView.swift */,
+			);
+			path = FunZone;
+			sourceTree = "<group>";
+		};
+		5B27D2C82BB15F5F00E7A7E1 /* UserAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				B461F1542BAD86F300CFEEBA /* SignUp.swift */,
+				B461F12C2BAD43A400CFEEBA /* SignIn.swift */,
+			);
+			path = UserAuthentication;
+			sourceTree = "<group>";
+		};
 		B461F11E2BAD43A400CFEEBA = {
 			isa = PBXGroup;
 			children = (
@@ -70,14 +104,12 @@
 		B461F1292BAD43A400CFEEBA /* BookMyPlace */ = {
 			isa = PBXGroup;
 			children = (
-				B4A90A862BB02F4800A033BB /* TableTennisView.swift */,
+				5B27D2C52BB15F2A00E7A7E1 /* Modules */,
 				5B27D2C02BAFF37D00E7A7E1 /* Utils */,
 				B4ABFC152BADE72800C2EFC6 /* CustomView */,
 				B461F12A2BAD43A400CFEEBA /* BookMyPlaceApp.swift */,
-				B461F12C2BAD43A400CFEEBA /* SignIn.swift */,
 				B461F12E2BAD43A900CFEEBA /* Assets.xcassets */,
 				B461F1302BAD43A900CFEEBA /* Preview Content */,
-				B461F1542BAD86F300CFEEBA /* SignUp.swift */,
 			);
 			path = BookMyPlace;
 			sourceTree = "<group>";
