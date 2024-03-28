@@ -28,14 +28,14 @@ struct SignUp: View {
                     Image("one_bajaj_logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 150, height: 150)
+                        .frame(width: 120, height: 120)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         .padding(.bottom, 25)
                     
                     CustomTextFieldView(data: $email, title: "Enter Email")
                     CustomTextFieldView(data: $name, title: "Enter Name")
                     CustomTextFieldView(data: $username, title: "Enter User Name" )
-                    CustomTextFieldView(data: $password, title: "Enter Password" )
+                    CustomSecuredTextField(data: $password, title: "Enter Password" )
                     
                     .padding([.leading, .trailing], 15)
                     
@@ -104,6 +104,6 @@ struct SignupInputFieldView: View {
     }
 }
 
-//#Preview {
-//    SignUp()
-//}
+#Preview {
+    SignUp()
+}
