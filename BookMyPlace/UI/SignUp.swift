@@ -72,6 +72,7 @@ struct SignUp: View {
                 let responseData = try JSONDecoder().decode(UserResponse.self, from: data!)
                 
                 if responseData.id != nil {
+                    isRegisterSuccess = true
                     print("Registraion is successfull for \(String(describing: responseData.name))")
                     
                 }else{
