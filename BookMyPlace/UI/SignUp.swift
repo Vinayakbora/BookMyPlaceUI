@@ -13,49 +13,51 @@ struct SignUp: View {
     @State var name : String = ""
     @State var username: String = ""
     @State  var password: String = ""
+    @State private var isRegisterSuccess = false
     
     let networkHelper = NetworkHelper()
     
     var body: some View {
         ScrollView(.vertical) {
-            VStack(alignment:.center){
-                Text("Register").font(.system(size: 30))
-                    .bold()
-                    .padding()
-                
-                Image("one_bajaj_logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150, height: 150)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .padding(.bottom, 25)
-                
-                CustomTextFieldView(data: $email, title: "Enter Email")
-                CustomTextFieldView(data: $name, title: "Enter Name")
-                CustomTextFieldView(data: $username, title: "Enter User Name" )
-                CustomTextFieldView(data: $password, title: "Enter Password" )
-                
+        
+                VStack(alignment:.center){
+                    Text("Register").font(.system(size: 30))
+                        .bold()
+                        .padding()
+                    
+                    Image("one_bajaj_logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 150, height: 150)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .padding(.bottom, 25)
+                    
+                    CustomTextFieldView(data: $email, title: "Enter Email")
+                    CustomTextFieldView(data: $name, title: "Enter Name")
+                    CustomTextFieldView(data: $username, title: "Enter User Name" )
+                    CustomTextFieldView(data: $password, title: "Enter Password" )
+                    
                     .padding([.leading, .trailing], 15)
-                
-                Button {
-                    Task{
-                        await registrationApiCall()
-                    }
-                }label: {
-                    Text("Register")
-                        .font(.system(size: 25))
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                }.frame(width: UIScreen.main.bounds.size.width - 40, height: 55)
-                    .background(LinearGradient(colors: [.primaryLightBlue, .primaryDarkBlue], startPoint: .top, endPoint: .bottom))
-                    .foregroundColor(.white)
-                    .cornerRadius(15)
-                    .padding([.leading, .trailing], 20)
-                    .padding(.top, 25)
-                    .shadow(radius: 5)
-                
-                Spacer()
+                    
+                    Button {
+                        Task{
+                            await registrationApiCall()
+                        }
+                    }label: {
+                        Text("Register")
+                            .font(.system(size: 25))
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    }.frame(width: UIScreen.main.bounds.size.width - 40, height: 55)
+                        .background(LinearGradient(colors: [.primaryLightBlue, .primaryDarkBlue], startPoint: .top, endPoint: .bottom))
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                        .padding([.leading, .trailing], 20)
+                        .padding(.top, 25)
+                        .shadow(radius: 5)
+                    Spacer()
+                }
             }
-        }
+        
     }
     
     func registrationApiCall() async{
@@ -66,15 +68,13 @@ struct SignUp: View {
         
         await networkHelper.callNetworkMethod(for: url, with : UserRequest(email: email, name:name, username: username, password: password),  requestType: .post, completionHandler: {data, response, error in
             
-            do{ 
-                let decoder = JSONDecoder()
+            do{
             
                 let responseData = try JSONDecoder().decode(UserResponse.self, from: data!)
                 
                 if responseData.id != nil {
                     isRegisterSuccess = true
                     print("Registraion is successfull for \(String(describing: responseData.name))")
-                    
                 }else{
                     print("Registration failed, Please Check details and try again!")
                 }

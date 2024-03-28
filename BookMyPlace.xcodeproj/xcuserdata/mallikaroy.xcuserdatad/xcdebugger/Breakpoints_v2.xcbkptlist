@@ -7,31 +7,220 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2A93D566-C371-4F95-95BF-EBF70B6D9DAE"
-            shouldBeEnabled = "No"
+            uuid = "B152C7B0-0190-4057-A94A-54BAD6436110"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BookMyPlace/UI/SignUp.swift"
+            filePath = "BookMyPlace/UI/SignIn.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "SignupInputFieldView"
-            landmarkType = "14">
+            landmarkName = "loginApiCall()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B152C7B0-0190-4057-A94A-54BAD6436110 - 7e829fdc00f0ad50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "B152C7B0-0190-4057-A94A-54BAD6436110 - 7e829fdc00f0ad50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "692">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3AC046DE-ABFD-41BA-8A6E-7D31F8A62192"
+            uuid = "6BD46CAD-E290-4956-AFF4-0DAD306F7ACD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookMyPlace/UI/SignIn.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "loginApiCall()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6BD46CAD-E290-4956-AFF4-0DAD306F7ACD - ae57c15e2a50e3ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "6BD46CAD-E290-4956-AFF4-0DAD306F7ACD - d7c40f46e0bc5acc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "6BD46CAD-E290-4956-AFF4-0DAD306F7ACD - 3abc5f7d593f39fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "6BD46CAD-E290-4956-AFF4-0DAD306F7ACD - 7e829fdc00f0ad50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "6BD46CAD-E290-4956-AFF4-0DAD306F7ACD - 7e829fdc00f0adff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F07D543-7EDB-42E1-83C1-0FFD0BA47371"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookMyPlace/UI/SignIn.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "loginApiCall()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1F07D543-7EDB-42E1-83C1-0FFD0BA47371 - 7e829fdc00f0ac16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "1220">
+               </Location>
+               <Location
+                  uuid = "1F07D543-7EDB-42E1-83C1-0FFD0BA47371 - 7e829fdc00f0ac16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookMyPlace.SignIn.loginApiCall() async -&gt; ()"
+                  moduleName = "BookMyPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mallikaroy/Mallika/Projects/FSD/BookMyPlace/BookMyPlace/UI/SignIn.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "1456">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DAB0982-EF88-4C0C-A7E0-5F16D86356FB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookMyPlace/UI/SignUp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "registrationApiCall()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B91EC41B-EBC7-4FF9-A1E7-1E62369158C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookMyPlace/UI/SignUp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "registrationApiCall()"
             landmarkType = "7">
          </BreakpointContent>
