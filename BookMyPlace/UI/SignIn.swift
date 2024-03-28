@@ -15,6 +15,8 @@ struct SignIn: View {
     @State var isEmployeeIdValid : Bool = false
     @State var isPasswordValid : Bool = true
     
+    let networkHelper = NetworkHelper()
+    
     
     var body: some View {
         
@@ -72,6 +74,31 @@ struct SignIn: View {
             return false
         }
         return true
+    }
+    
+    
+    
+    func loginApiCall() async{
+        
+        guard let url =  URL(string: "http://192.168.1.3:8081/api/v1/user/") else {
+            return
+        }
+        
+//        await networkHelper.callNetworkMethod(for: url, with : LoginRequest(username: username, password: password),  requestType: .post, completionHandler: {data, response, error in
+//            
+//            do{
+//                let response = try JSONDecoder().decode(UserResponse.self, from: data!)
+//                
+//                if response != nil {
+//                    print("Registraion is successfull for \(String(describing: response.name))")
+//                }else{
+//                    print("Registration failed, Please Check details and try again!")
+//                }
+//            }catch{
+//                print(error.localizedDescription)
+//            }
+//        }
+//        )
     }
 }
 
