@@ -25,6 +25,9 @@ struct SignIn: View {
                     .bold()
                     .padding()
                 
+            
+                
+                
                 Image("one_bajaj_logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -40,6 +43,9 @@ struct SignIn: View {
                 Button {
                     print("Employee ID is \($employeeId)")
                     print("Password id \($password)")
+                    
+
+                    
                 }label: {
                     Text("Login")
                         .font(.system(size: 25))
