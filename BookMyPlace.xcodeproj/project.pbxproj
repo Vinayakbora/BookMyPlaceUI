@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1B3D402BB571AE00309373 /* TabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B3D3F2BB571AE00309373 /* TabScreen.swift */; };
+		5B1B3D422BB577E000309373 /* CustomTabbarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B3D412BB577E000309373 /* CustomTabbarShape.swift */; };
 		5B27D2C22BAFF39C00E7A7E1 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D2C12BAFF39B00E7A7E1 /* ColorHelper.swift */; };
 		5B27D2C42BAFFA2800E7A7E1 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D2C32BAFFA2800E7A7E1 /* NetworkHelper.swift */; };
+		5B27D2CA2BB1BCC500E7A7E1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D2C92BB1BCC500E7A7E1 /* DashboardView.swift */; };
+		5B27D2CC2BB1BEAF00E7A7E1 /* MiscellaneousHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B27D2CB2BB1BEAF00E7A7E1 /* MiscellaneousHelper.swift */; };
+		5B27D2DF2BB1CB1500E7A7E1 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D72BB1C7C300E7A7E1 /* Nunito-ExtraBold.ttf */; };
+		5B27D2E02BB1CB1500E7A7E1 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D92BB1C7C400E7A7E1 /* Nunito-Medium.ttf */; };
+		5B27D2E12BB1CB1500E7A7E1 /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D42BB1C7C300E7A7E1 /* Nunito-Black.ttf */; };
+		5B27D2E22BB1CB1500E7A7E1 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2CE2BB1C7C200E7A7E1 /* Nunito-ExtraLight.ttf */; };
+		5B27D2E32BB1CB1500E7A7E1 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2DB2BB1C7C400E7A7E1 /* Nunito-Light.ttf */; };
+		5B27D2E42BB1CB1500E7A7E1 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2DA2BB1C7C400E7A7E1 /* Nunito-SemiBold.ttf */; };
+		5B27D2E52BB1CB1500E7A7E1 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D82BB1C7C400E7A7E1 /* Nunito-Regular.ttf */; };
+		5B27D2E62BB1CB1500E7A7E1 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D62BB1C7C300E7A7E1 /* Nunito-Bold.ttf */; };
 		B442A8652BB576010054A67A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B442A8642BB576010054A67A /* UserData.swift */; };
 		B461F12B2BAD43A400CFEEBA /* BookMyPlaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461F12A2BAD43A400CFEEBA /* BookMyPlaceApp.swift */; };
 		B461F12D2BAD43A400CFEEBA /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461F12C2BAD43A400CFEEBA /* SignIn.swift */; };
@@ -22,8 +34,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B1B3D3F2BB571AE00309373 /* TabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScreen.swift; sourceTree = "<group>"; };
+		5B1B3D412BB577E000309373 /* CustomTabbarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarShape.swift; sourceTree = "<group>"; };
 		5B27D2C12BAFF39B00E7A7E1 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		5B27D2C32BAFFA2800E7A7E1 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		5B27D2C92BB1BCC500E7A7E1 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		5B27D2CB2BB1BEAF00E7A7E1 /* MiscellaneousHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscellaneousHelper.swift; sourceTree = "<group>"; };
+		5B27D2CE2BB1C7C200E7A7E1 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
+		5B27D2D42BB1C7C300E7A7E1 /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
+		5B27D2D62BB1C7C300E7A7E1 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		5B27D2D72BB1C7C300E7A7E1 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		5B27D2D82BB1C7C400E7A7E1 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		5B27D2D92BB1C7C400E7A7E1 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		5B27D2DA2BB1C7C400E7A7E1 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		5B27D2DB2BB1C7C400E7A7E1 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		5B27D2DE2BB1C80F00E7A7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B442A8642BB576010054A67A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		B461F1272BAD43A400CFEEBA /* BookMyPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMyPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B461F12A2BAD43A400CFEEBA /* BookMyPlaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMyPlaceApp.swift; sourceTree = "<group>"; };
@@ -53,8 +78,60 @@
 			children = (
 				5B27D2C12BAFF39B00E7A7E1 /* ColorHelper.swift */,
 				5B27D2C32BAFFA2800E7A7E1 /* NetworkHelper.swift */,
+				5B27D2CB2BB1BEAF00E7A7E1 /* MiscellaneousHelper.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5B27D2C52BB15F2A00E7A7E1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D2C82BB15F5F00E7A7E1 /* UserAuthentication */,
+				5B27D2C72BB15F4700E7A7E1 /* FunZone */,
+				5B27D2C62BB15F3E00E7A7E1 /* Dashboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5B27D2C62BB15F3E00E7A7E1 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D2C92BB1BCC500E7A7E1 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		5B27D2C72BB15F4700E7A7E1 /* FunZone */ = {
+			isa = PBXGroup;
+			children = (
+				B4A90A862BB02F4800A033BB /* TableTennisView.swift */,
+			);
+			path = FunZone;
+			sourceTree = "<group>";
+		};
+		5B27D2C82BB15F5F00E7A7E1 /* UserAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				B461F1542BAD86F300CFEEBA /* SignUp.swift */,
+				B461F12C2BAD43A400CFEEBA /* SignIn.swift */,
+				5B1B3D3F2BB571AE00309373 /* TabScreen.swift */,
+			);
+			path = UserAuthentication;
+			sourceTree = "<group>";
+		};
+		5B27D2CD2BB1C74600E7A7E1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5B27D2D42BB1C7C300E7A7E1 /* Nunito-Black.ttf */,
+				5B27D2D62BB1C7C300E7A7E1 /* Nunito-Bold.ttf */,
+				5B27D2D72BB1C7C300E7A7E1 /* Nunito-ExtraBold.ttf */,
+				5B27D2CE2BB1C7C200E7A7E1 /* Nunito-ExtraLight.ttf */,
+				5B27D2DB2BB1C7C400E7A7E1 /* Nunito-Light.ttf */,
+				5B27D2D92BB1C7C400E7A7E1 /* Nunito-Medium.ttf */,
+				5B27D2D82BB1C7C400E7A7E1 /* Nunito-Regular.ttf */,
+				5B27D2DA2BB1C7C400E7A7E1 /* Nunito-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		B442A8622BB574130054A67A /* UI */ = {
@@ -95,6 +172,9 @@
 		B461F1292BAD43A400CFEEBA /* BookMyPlace */ = {
 			isa = PBXGroup;
 			children = (
+				5B27D2DE2BB1C80F00E7A7E1 /* Info.plist */,
+				5B27D2CD2BB1C74600E7A7E1 /* Fonts */,
+				5B27D2C52BB15F2A00E7A7E1 /* Modules */,
 				B4819BD62BB5EB7800C0DCB0 /* ProfileView.swift */,
 				B442A8632BB575E30054A67A /* Model */,
 				B442A8622BB574130054A67A /* UI */,
@@ -119,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				B4ABFC162BADE74700C2EFC6 /* CustomTextFieldView.swift */,
+				5B1B3D412BB577E000309373 /* CustomTabbarShape.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -181,6 +262,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B27D2E42BB1CB1500E7A7E1 /* Nunito-SemiBold.ttf in Resources */,
+				5B27D2E02BB1CB1500E7A7E1 /* Nunito-Medium.ttf in Resources */,
+				5B27D2E32BB1CB1500E7A7E1 /* Nunito-Light.ttf in Resources */,
+				5B27D2E12BB1CB1500E7A7E1 /* Nunito-Black.ttf in Resources */,
+				5B27D2DF2BB1CB1500E7A7E1 /* Nunito-ExtraBold.ttf in Resources */,
+				5B27D2E22BB1CB1500E7A7E1 /* Nunito-ExtraLight.ttf in Resources */,
+				5B27D2E62BB1CB1500E7A7E1 /* Nunito-Bold.ttf in Resources */,
+				5B27D2E52BB1CB1500E7A7E1 /* Nunito-Regular.ttf in Resources */,
 				B461F1322BAD43A900CFEEBA /* Preview Assets.xcassets in Resources */,
 				B461F12F2BAD43A900CFEEBA /* Assets.xcassets in Resources */,
 			);
@@ -194,14 +283,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A90A872BB02F4800A033BB /* TableTennisView.swift in Sources */,
+				5B27D2CA2BB1BCC500E7A7E1 /* DashboardView.swift in Sources */,
 				B461F12D2BAD43A400CFEEBA /* SignIn.swift in Sources */,
+				5B1B3D402BB571AE00309373 /* TabScreen.swift in Sources */,
 				B4819BD72BB5EB7800C0DCB0 /* ProfileView.swift in Sources */,
 				B4819BD52BB5C4D100C0DCB0 /* LoginResponse.swift in Sources */,
 				B442A8652BB576010054A67A /* UserData.swift in Sources */,
 				5B27D2C22BAFF39C00E7A7E1 /* ColorHelper.swift in Sources */,
+				5B1B3D422BB577E000309373 /* CustomTabbarShape.swift in Sources */,
 				B461F1552BAD86F300CFEEBA /* SignUp.swift in Sources */,
 				B461F12B2BAD43A400CFEEBA /* BookMyPlaceApp.swift in Sources */,
 				5B27D2C42BAFFA2800E7A7E1 /* NetworkHelper.swift in Sources */,
+				5B27D2CC2BB1BEAF00E7A7E1 /* MiscellaneousHelper.swift in Sources */,
 				B4ABFC172BADE74700C2EFC6 /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +431,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookMyPlace/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookMyPlace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -366,6 +460,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookMyPlace/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookMyPlace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
