@@ -14,20 +14,8 @@ enum NetworkError: Error {
 
 class NetworkHelper {
     
-    private var requestType: RequestType = .get
-    private var httpBody: [String:Any] = [:]
-    
-    
-    init(requestType: RequestType) {
-        self.requestType = requestType
-    }
-    
-    init(requestType: RequestType, httpBody: [String:Any]) {
-        self.requestType = requestType
-        self.httpBody = httpBody
-    }
-    
-    func callNetworkMethod(for url: URL, with parameters: Codable? = nil, completionHandler: @escaping((Data?, URLResponse?, Error?) -> ())) async {
+        
+    func callNetworkMethod(for url: URL, with parameters: Codable? = nil, requestType: RequestType, completionHandler: @escaping((Data?, URLResponse?, Error?) -> ())) async {
         
         switch requestType {
         case .get:
@@ -35,7 +23,7 @@ class NetworkHelper {
                 completionHandler(data, response, error)
             }
         default:
-            callNetworkMethodWithParameters(for: url, with: parameters) { data, response, error in
+            callNetworkMethodWithParameters(for: url, with: parameters, requestType: requestType) { data, response, error in
                 completionHandler(data, response, error)
             }
         }
@@ -50,7 +38,7 @@ class NetworkHelper {
         }
     }
     
-    private func callNetworkMethodWithParameters(for url: URL, with parameters: Codable?, completionHandler: @escaping((Data?, URLResponse?, Error?) -> ())) {
+    private func callNetworkMethodWithParameters(for url: URL, with parameters: Codable?,  requestType: RequestType, completionHandler: @escaping((Data?, URLResponse?, Error?) -> ())) {
         
         var request = URLRequest(url: url)
         request.httpMethod = requestType.rawValue

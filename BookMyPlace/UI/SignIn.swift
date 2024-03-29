@@ -44,13 +44,9 @@ struct SignIn: View {
                     print("Username is \($username)")
                     print("Password id \($password)")
                     
-<<<<<<< HEAD:BookMyPlace/Modules/UserAuthentication/SignIn.swift
-
-=======
                     Task{
                         await loginApiCall()
                     }
->>>>>>> main:BookMyPlace/UI/SignIn.swift
                     
                 }label: {
                     Text("Login")

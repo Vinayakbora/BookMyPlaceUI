@@ -21,11 +21,14 @@
 		5B27D2E42BB1CB1500E7A7E1 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2DA2BB1C7C400E7A7E1 /* Nunito-SemiBold.ttf */; };
 		5B27D2E52BB1CB1500E7A7E1 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D82BB1C7C400E7A7E1 /* Nunito-Regular.ttf */; };
 		5B27D2E62BB1CB1500E7A7E1 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D62BB1C7C300E7A7E1 /* Nunito-Bold.ttf */; };
+		B442A8652BB576010054A67A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B442A8642BB576010054A67A /* UserData.swift */; };
 		B461F12B2BAD43A400CFEEBA /* BookMyPlaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461F12A2BAD43A400CFEEBA /* BookMyPlaceApp.swift */; };
 		B461F12D2BAD43A400CFEEBA /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461F12C2BAD43A400CFEEBA /* SignIn.swift */; };
 		B461F12F2BAD43A900CFEEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B461F12E2BAD43A900CFEEBA /* Assets.xcassets */; };
 		B461F1322BAD43A900CFEEBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B461F1312BAD43A900CFEEBA /* Preview Assets.xcassets */; };
 		B461F1552BAD86F300CFEEBA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461F1542BAD86F300CFEEBA /* SignUp.swift */; };
+		B4819BD52BB5C4D100C0DCB0 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4819BD42BB5C4D100C0DCB0 /* LoginResponse.swift */; };
+		B4819BD72BB5EB7800C0DCB0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4819BD62BB5EB7800C0DCB0 /* ProfileView.swift */; };
 		B4A90A872BB02F4800A033BB /* TableTennisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A90A862BB02F4800A033BB /* TableTennisView.swift */; };
 		B4ABFC172BADE74700C2EFC6 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABFC162BADE74700C2EFC6 /* CustomTextFieldView.swift */; };
 /* End PBXBuildFile section */
@@ -46,12 +49,15 @@
 		5B27D2DA2BB1C7C400E7A7E1 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		5B27D2DB2BB1C7C400E7A7E1 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		5B27D2DE2BB1C80F00E7A7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B442A8642BB576010054A67A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		B461F1272BAD43A400CFEEBA /* BookMyPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMyPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B461F12A2BAD43A400CFEEBA /* BookMyPlaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMyPlaceApp.swift; sourceTree = "<group>"; };
 		B461F12C2BAD43A400CFEEBA /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		B461F12E2BAD43A900CFEEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B461F1312BAD43A900CFEEBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B461F1542BAD86F300CFEEBA /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		B4819BD42BB5C4D100C0DCB0 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		B4819BD62BB5EB7800C0DCB0 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B4A90A862BB02F4800A033BB /* TableTennisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTennisView.swift; sourceTree = "<group>"; };
 		B4ABFC162BADE74700C2EFC6 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +134,25 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B442A8622BB574130054A67A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B4A90A862BB02F4800A033BB /* TableTennisView.swift */,
+				B461F1542BAD86F300CFEEBA /* SignUp.swift */,
+				B461F12C2BAD43A400CFEEBA /* SignIn.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B442A8632BB575E30054A67A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B442A8642BB576010054A67A /* UserData.swift */,
+				B4819BD42BB5C4D100C0DCB0 /* LoginResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B461F11E2BAD43A400CFEEBA = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +175,9 @@
 				5B27D2DE2BB1C80F00E7A7E1 /* Info.plist */,
 				5B27D2CD2BB1C74600E7A7E1 /* Fonts */,
 				5B27D2C52BB15F2A00E7A7E1 /* Modules */,
+				B4819BD62BB5EB7800C0DCB0 /* ProfileView.swift */,
+				B442A8632BB575E30054A67A /* Model */,
+				B442A8622BB574130054A67A /* UI */,
 				5B27D2C02BAFF37D00E7A7E1 /* Utils */,
 				B4ABFC152BADE72800C2EFC6 /* CustomView */,
 				B461F12A2BAD43A400CFEEBA /* BookMyPlaceApp.swift */,
@@ -258,6 +286,9 @@
 				5B27D2CA2BB1BCC500E7A7E1 /* DashboardView.swift in Sources */,
 				B461F12D2BAD43A400CFEEBA /* SignIn.swift in Sources */,
 				5B1B3D402BB571AE00309373 /* TabScreen.swift in Sources */,
+				B4819BD72BB5EB7800C0DCB0 /* ProfileView.swift in Sources */,
+				B4819BD52BB5C4D100C0DCB0 /* LoginResponse.swift in Sources */,
+				B442A8652BB576010054A67A /* UserData.swift in Sources */,
 				5B27D2C22BAFF39C00E7A7E1 /* ColorHelper.swift in Sources */,
 				5B1B3D422BB577E000309373 /* CustomTabbarShape.swift in Sources */,
 				B461F1552BAD86F300CFEEBA /* SignUp.swift in Sources */,
