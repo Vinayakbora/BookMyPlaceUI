@@ -42,29 +42,31 @@ struct Header: View {
 struct ProfileText: View {
     
     let networkHelper = NetworkHelper()
-//    let uerProfile = Profile(from: <#Decoder#>)
     
     @State var fullName: String  = "Vinayak Bora"
     @State var employeeId : String = "1001760"
     @State var companyName: String = "Bajaj Markets"
     @State  var campusName: String = "Smartworks"
     
+    @State var userData: Profile?
+    
     var body: some View {
+       
         Spacer()
         VStack(spacing: 50) {
             VStack {
                 Text("Employee Name")
                     .bold()
                     .font(.subheadline)
-                Text(fullName)
+                Text(userData?.name ?? "Vinayak Bora")
                     .font(.title)
             }
             
             VStack {
-                Text("Employee ID")
+                Text("Employee Email ID")
                     .bold()
                     .font(.subheadline)
-                Text(employeeId)
+                Text(userData?.email ?? "mallika.roy@bajajfinserv.in")
                     .font(.title)
             }
             
@@ -83,14 +85,19 @@ struct ProfileText: View {
                 Text(campusName)
                     .font(.title)
             }
+        }.onAppear() {
+            Task{
+                await self.getProfileDetails()
+            }
+           
         }
         
         .padding()
         Spacer()
     }
     
-    func getProfileDetails() async{
-        guard let url = URL(string: "http://192.168.1.3:8081/api/v1/user/mallika") else {
+    func getProfileDetails() async {
+        guard let url = URL(string: "http://192.168.42.125:8081/api/v1/profile/Mallika") else {
             return
         }
         
@@ -98,10 +105,11 @@ struct ProfileText: View {
             do{
                 let response = try JSONDecoder().decode(ProfileResponse.self, from: data!)
                 
-                if response.data.id != nil {
-                    print("Login successfull for \(String(describing: response))")
+                if response.data?.id != nil {
+                    print("Profile for \(String(describing: response))")
+                    self.userData = response.data
                 }else{
-                    print("")
+                    print("Profile api fail")
                 }
                 
             }catch{

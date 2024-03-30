@@ -73,15 +73,15 @@ struct SignUp: View {
     
     func registrationApiCall() async{
         
-        guard let url =  URL(string: "http://192.168.1.3:8081/api/v1/user/") else {
+        guard let url =  URL(string: "http://192.168.42.125:8081/api/v1/user") else {
             return
         }
         
         await networkHelper.callNetworkMethod(for: url, with : UserRequest(email: email, name:name, username: username, password: password),  requestType: .post, completionHandler: {data, response, error in
             
             do{
-            
-                let responseData = try JSONDecoder().decode(UserResponse.self, from: data!)
+                guard let signUpData = data else { return }
+                let responseData = try JSONDecoder().decode(UserResponse.self, from: signUpData)
                 
                 if responseData.id != nil {
                     isRegisterSuccess = true

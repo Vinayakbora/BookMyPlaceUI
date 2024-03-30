@@ -38,7 +38,7 @@ struct TabScreen: View {
                     .ignoresSafeArea()
                     .tag(Tab.services)
                 
-                SignUp()
+                ProfileView()
                     .ignoresSafeArea()
                     .tag(Tab.profile)
                 

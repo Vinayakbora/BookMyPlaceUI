@@ -27,8 +27,11 @@ class NetworkHelper {
         
         var request = URLRequest(url: url)
         request.httpMethod = requestType.rawValue
-        guard let parameters = parameters, let data = try? JSONEncoder().encode(parameters) else {return}
-        request.httpBody = data
+        if requestType == .post {
+            guard let parameters = parameters, let data = try? JSONEncoder().encode(parameters) else { return }
+            request.httpBody = data
+        }
+        
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("keep-alive", forHTTPHeaderField: "Connection")
@@ -38,8 +41,10 @@ class NetworkHelper {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             completionHandler(data, response, error)
         }
+        print(request)
         task.resume()
     }
+    
 }
 
 

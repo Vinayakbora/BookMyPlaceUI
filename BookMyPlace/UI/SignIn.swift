@@ -96,14 +96,15 @@ struct SignIn: View {
     
     func loginApiCall() async{
         
-        guard let url =  URL(string: "http://192.168.1.3:8081/api/v1/user/login/") else {
+        guard let url =  URL(string: "http://192.168.42.125:8081/api/v1/user/login/") else {
             return
         }
         
         await networkHelper.callNetworkMethod(for: url, with : LoginRequest(username: username, password: password),  requestType: .post, completionHandler: {data, response, error in
             
             do{
-                let response = try JSONDecoder().decode(LoginResponse.self, from: data!)
+                guard let responseData = data else { return }
+                let response = try JSONDecoder().decode(LoginResponse.self, from: responseData)
                 
                 if let _ = response.username, let token = response.token {
                     print("Login successfull for \(String(describing: response.username))")
