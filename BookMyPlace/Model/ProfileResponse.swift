@@ -8,13 +8,14 @@
 import Foundation
 
 struct ProfileResponse: Codable {
-    let data: Profile
-    let message: String
+    let data: Profile?
+    let message: String?
 }
 
 struct Profile: Codable {
-    let id: Int
-    let name, username, email, password: String
-    let timestamp: String
+    let id: Int?
+    let name, username, email, password: String?
+    let timestamp: String?
+
 }
 
