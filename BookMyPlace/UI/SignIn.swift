@@ -14,26 +14,43 @@ struct SignIn: View {
     @State var focusedField : String = ""
     @State var isEmployeeIdValid : Bool = false
     @State var isPasswordValid : Bool = true
-    
+        
     let networkHelper = NetworkHelper()
     
     var body: some View {
         
         NavigationView{
             VStack(alignment:.center){
-                Text("Login").font(.system(size: 30))
-                    .bold()
-                    .padding()
-                
-            
-                
-                
-                Image("one_bajaj_logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    .padding([.bottom], 40)
+                VStack{
+                    ZStack(content: {
+                        VStack{
+                            Image("CardBackground")
+                                .resizable()
+                                .frame(width: UIScreen.screenWidth, height: 200)
+                                .shadow(radius: 5)
+                            Spacer()
+                        }
+
+                        LinearGradient(colors: [.clear, .black], startPoint: .topTrailing, endPoint: .bottomLeading)
+                        VStack{
+                            Spacer()
+                            Text("Login").font(.system(size: 30))
+                                .foregroundStyle(.white)
+                                .bold()
+                                .padding()
+                        }
+
+                    })
+                }
+                .frame(height: 200)
+
+//
+//                Image("one_bajaj_logo")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 120, height: 120)
+//                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+//                    .padding([.bottom], 40)
                 CustomTextFieldView(data: $username, title: "User Name")
                     .padding([.leading, .trailing])
                 CustomSecuredTextField(data: $password, title: "Password" )
@@ -53,7 +70,7 @@ struct SignIn: View {
                         .font(.system(size: 25))
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 }.frame(maxWidth: .infinity, maxHeight:50)
-                    .background(LinearGradient(colors: [.primaryLightBlue, .primaryDarkBlue], startPoint: .top, endPoint: .bottom))
+                    .background(LinearGradient(colors: [.black, .black.opacity(0.80)], startPoint: .top, endPoint: .bottom))
                     .foregroundColor(.white)
                     .cornerRadius(15)
                     .padding([.leading, .trailing, .top], 25)
@@ -71,7 +88,9 @@ struct SignIn: View {
                 
                 Spacer()
             }
+            .ignoresSafeArea(edges: .top)
         }
+        .ignoresSafeArea(edges: .top)
     }
     
     func TextFieldIsNotEmpty(_ string : String) -> Bool {
