@@ -43,14 +43,6 @@ struct SignIn: View {
                     })
                 }
                 .frame(height: 200)
-
-//
-//                Image("one_bajaj_logo")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 120, height: 120)
-//                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-//                    .padding([.bottom], 40)
                 CustomTextFieldView(data: $username, title: "User Name")
                     .padding([.leading, .trailing])
                 CustomSecuredTextField(data: $password, title: "Password" )
@@ -70,7 +62,7 @@ struct SignIn: View {
                         .font(.system(size: 25))
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 }.frame(maxWidth: .infinity, maxHeight:50)
-                    .background(LinearGradient(colors: [.black, .black.opacity(0.80)], startPoint: .top, endPoint: .bottom))
+                    .background(LinearGradient(colors: [.black, .black.opacity(0.70)], startPoint: .top, endPoint: .bottom))
                     .foregroundColor(.white)
                     .cornerRadius(15)
                     .padding([.leading, .trailing, .top], 25)
@@ -113,8 +105,9 @@ struct SignIn: View {
             do{
                 let response = try JSONDecoder().decode(LoginResponse.self, from: data!)
                 
-                if response.username != nil {
+                if let _ = response.username, let token = response.token {
                     print("Login successfull for \(String(describing: response.username))")
+                    UserDefaults.standard.setValue(token, forKey: "token")
                 }else{
                     print("Login failed, Please Check details and try again!")
                     // Navigation to home page
