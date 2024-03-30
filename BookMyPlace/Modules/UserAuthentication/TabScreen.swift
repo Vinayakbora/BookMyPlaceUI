@@ -8,10 +8,10 @@
 import SwiftUI
 
 enum Tab: String, CaseIterable {
-    case home = "square.and.arrow.up.circle.fill"
-    case profile = "pencil.circle.fill"
-    case services = "trash.circle.fill"
-    case bookings = "paperplane.circle.fill"
+    case home = "homeicon"
+    case profile = "profileicon"
+    case services = "servicesicon"
+    case bookings = "listicon"
 }
 
 struct TabScreen: View {
@@ -26,7 +26,7 @@ struct TabScreen: View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
             TabView(selection: $selectedTab) {
-                DashboardView()
+                SignUp()
                     .ignoresSafeArea()
                     .tag(Tab.home)
                 
@@ -38,7 +38,7 @@ struct TabScreen: View {
                     .ignoresSafeArea()
                     .tag(Tab.services)
                 
-                ProfileView()
+                SignUp()
                     .ignoresSafeArea()
                     .tag(Tab.profile)
                 
@@ -62,11 +62,11 @@ struct TabScreen: View {
                                 xAxis = reader.frame(in: .global).midX
                             }
                         } label: {
-                            Image(systemName: image.rawValue)
+                            Image(image.rawValue)
                                 .resizable()
                                 .renderingMode(.template)
                                 .aspectRatio(contentMode: .fit)
-                                .foregroundColor(image == selectedTab ? getIconColor(image: image) : Color.black)
+                                .foregroundColor(image == selectedTab ? getIconColor(image: image) : .white)
                                 .background(Color.white.opacity(selectedTab == image ? 1 : 0).clipShape(Circle()))
                                 .overlay {
                                     RoundedRectangle(cornerRadius: 30)

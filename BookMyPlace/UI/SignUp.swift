@@ -21,24 +21,35 @@ struct SignUp: View {
         ScrollView(.vertical) {
         
                 VStack(alignment:.center){
-                    Text("Register").font(.system(size: 30))
-                        .bold()
-                        .padding()
                     
-                    Image("one_bajaj_logo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        .padding(.bottom, 25)
+                    VStack{
+                        ZStack(content: {
+                            VStack{
+                                Image("CardBackground")
+                                    .resizable()
+                                    .frame(width: UIScreen.screenWidth, height: 200)
+                                    .shadow(radius: 5)
+                                Spacer()
+                            }
+
+                            LinearGradient(colors: [.clear, .black], startPoint: .topTrailing, endPoint: .bottomLeading)
+                            VStack{
+                                Spacer()
+                                Text("Register").font(.system(size: 30))
+                                    .foregroundStyle(.white)
+                                    .bold()
+                                    .padding()
+                            }
+
+                        })
+                    }
+                    .frame(height: 200)
                     
                     CustomTextFieldView(data: $email, title: "Enter Email")
                     CustomTextFieldView(data: $name, title: "Enter Name")
                     CustomTextFieldView(data: $username, title: "Enter User Name" )
                     CustomSecuredTextField(data: $password, title: "Enter Password" )
-                    
-                    .padding([.leading, .trailing], 15)
-                    
+                                        
                     Button {
                         Task{
                             await registrationApiCall()
@@ -48,7 +59,7 @@ struct SignUp: View {
                             .font(.system(size: 25))
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     }.frame(width: UIScreen.main.bounds.size.width - 40, height: 55)
-                        .background(LinearGradient(colors: [.primaryLightBlue, .primaryDarkBlue], startPoint: .top, endPoint: .bottom))
+                        .background(LinearGradient(colors: [.black, .black.opacity(0.70)], startPoint: .top, endPoint: .bottom))
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .padding([.leading, .trailing], 20)
