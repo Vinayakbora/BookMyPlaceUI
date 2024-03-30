@@ -40,6 +40,10 @@ struct Header: View {
 
 
 struct ProfileText: View {
+    
+    let networkHelper = NetworkHelper()
+//    let uerProfile = Profile(from: <#Decoder#>)
+    
     @State var fullName: String  = "Vinayak Bora"
     @State var employeeId : String = "1001760"
     @State var companyName: String = "Bajaj Markets"
@@ -83,6 +87,29 @@ struct ProfileText: View {
         
         .padding()
         Spacer()
+    }
+    
+    func getProfileDetails() async{
+        guard let url = URL(string: "http://192.168.1.3:8081/api/v1/user/mallika") else {
+            return
+        }
+        
+        await networkHelper.callNetworkMethod(for: url, requestType: .get , completionHandler: {data, response, error in
+            do{
+                let response = try JSONDecoder().decode(ProfileResponse.self, from: data!)
+                
+                if response.data.id != nil {
+                    print("Login successfull for \(String(describing: response))")
+                }else{
+                    print("")
+                }
+                
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+        )
+            
     }
 }
 
