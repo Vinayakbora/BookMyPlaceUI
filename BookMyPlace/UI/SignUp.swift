@@ -73,7 +73,7 @@ struct SignUp: View {
     
     func registrationApiCall() async{
         
-        guard let url =  URL(string: "http://192.168.42.125:8081/api/v1/user") else {
+        guard let url =  URL(string: NetworkHelper.baseUrl + "user/register") else {
             return
         }
         

@@ -11,7 +11,13 @@ import SwiftUI
 struct BookMyPlaceApp: App {
     var body: some Scene {
         WindowGroup {
-            TabScreen()
+            
+            if let token = UserDefaults.standard.value(forKey: "token"){
+                TabScreen()
+            } else {
+                SignIn()
+            }
+            
         }
     }
 }
