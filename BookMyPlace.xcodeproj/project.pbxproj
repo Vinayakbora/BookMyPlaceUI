@@ -21,7 +21,8 @@
 		5B27D2E42BB1CB1500E7A7E1 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2DA2BB1C7C400E7A7E1 /* Nunito-SemiBold.ttf */; };
 		5B27D2E52BB1CB1500E7A7E1 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D82BB1C7C400E7A7E1 /* Nunito-Regular.ttf */; };
 		5B27D2E62BB1CB1500E7A7E1 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B27D2D62BB1C7C300E7A7E1 /* Nunito-Bold.ttf */; };
-		5B736AA82BB9D4E300791D34 /* FunZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B736AA72BB9D4E300791D34 /* FunZoneView.swift */; };
+		5B736AAA2BB9DA9400791D34 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B736AA92BB9DA9400791D34 /* AppRootManager.swift */; };
+		5B736AAC2BB9DC4C00791D34 /* FunZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B736AAB2BB9DC4C00791D34 /* FunZoneView.swift */; };
 		5BBDDFD72BB7EC93003A5208 /* ServiceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBDDFD62BB7EC93003A5208 /* ServiceList.swift */; };
 		B442A8652BB576010054A67A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B442A8642BB576010054A67A /* UserData.swift */; };
 		B44FD2482BB8376600DAC76A /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FD2472BB8376500DAC76A /* ProfileResponse.swift */; };
@@ -52,7 +53,8 @@
 		5B27D2DA2BB1C7C400E7A7E1 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		5B27D2DB2BB1C7C400E7A7E1 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		5B27D2DE2BB1C80F00E7A7E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		5B736AA72BB9D4E300791D34 /* FunZoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunZoneView.swift; path = ../../../../../Downloads/FunZoneView.swift; sourceTree = "<group>"; };
+		5B736AA92BB9DA9400791D34 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
+		5B736AAB2BB9DC4C00791D34 /* FunZoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunZoneView.swift; sourceTree = "<group>"; };
 		5BBDDFD62BB7EC93003A5208 /* ServiceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceList.swift; sourceTree = "<group>"; };
 		B442A8642BB576010054A67A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		B44FD2472BB8376500DAC76A /* ProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				5B27D2C12BAFF39B00E7A7E1 /* ColorHelper.swift */,
 				5B27D2C32BAFFA2800E7A7E1 /* NetworkHelper.swift */,
 				5B27D2CB2BB1BEAF00E7A7E1 /* MiscellaneousHelper.swift */,
+				5B736AA92BB9DA9400791D34 /* AppRootManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -110,7 +113,7 @@
 		5B27D2C72BB15F4700E7A7E1 /* FunZone */ = {
 			isa = PBXGroup;
 			children = (
-				5B736AA72BB9D4E300791D34 /* FunZoneView.swift */,
+				5B736AAB2BB9DC4C00791D34 /* FunZoneView.swift */,
 			);
 			path = FunZone;
 			sourceTree = "<group>";
@@ -292,13 +295,14 @@
 				B4A90A872BB02F4800A033BB /* TableTennisView.swift in Sources */,
 				5B27D2CA2BB1BCC500E7A7E1 /* DashboardView.swift in Sources */,
 				B461F12D2BAD43A400CFEEBA /* SignIn.swift in Sources */,
+				5B736AAC2BB9DC4C00791D34 /* FunZoneView.swift in Sources */,
 				5B1B3D402BB571AE00309373 /* TabScreen.swift in Sources */,
-				5B736AA82BB9D4E300791D34 /* FunZoneView.swift in Sources */,
 				B4819BD72BB5EB7800C0DCB0 /* ProfileView.swift in Sources */,
 				B4819BD52BB5C4D100C0DCB0 /* LoginResponse.swift in Sources */,
 				5BBDDFD72BB7EC93003A5208 /* ServiceList.swift in Sources */,
 				B442A8652BB576010054A67A /* UserData.swift in Sources */,
 				5B27D2C22BAFF39C00E7A7E1 /* ColorHelper.swift in Sources */,
+				5B736AAA2BB9DA9400791D34 /* AppRootManager.swift in Sources */,
 				5B1B3D422BB577E000309373 /* CustomTabbarShape.swift in Sources */,
 				B461F1552BAD86F300CFEEBA /* SignUp.swift in Sources */,
 				B461F12B2BAD43A400CFEEBA /* BookMyPlaceApp.swift in Sources */,

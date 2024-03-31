@@ -9,15 +9,20 @@ import SwiftUI
 
 @main
 struct BookMyPlaceApp: App {
+    
+    @StateObject private var appRootManager = AppRootManager()
+    
     var body: some Scene {
         WindowGroup {
-            
-            if let token = UserDefaults.standard.value(forKey: "token"){
-                TabScreen()
-            } else {
-                SignIn()
+            Group {
+                switch appRootManager.currentRoot {
+                case .login:
+                    SignIn()
+                case .dashboard:
+                    TabScreen()
+                }
             }
-            
+            .environmentObject(appRootManager)
         }
     }
 }
