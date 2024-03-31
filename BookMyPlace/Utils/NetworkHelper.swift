@@ -28,9 +28,10 @@ class NetworkHelper {
         
         var request = URLRequest(url: url)
         request.httpMethod = requestType.rawValue
-        if requestType == .post {
+        if requestType == .post || requestType == .put {
             guard let parameters = parameters, let data = try? JSONEncoder().encode(parameters) else { return }
             request.httpBody = data
+            print(data)
         }
         
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
