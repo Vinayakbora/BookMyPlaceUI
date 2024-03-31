@@ -71,7 +71,7 @@ struct SignIn: View {
                 HStack{
                     Text("Don't have an account?").foregroundStyle(.gray)
                     
-                    NavigationLink(destination: SignUp()){
+                    NavigationLink(destination: SignUp().navigationBarBackButtonHidden(true)){
                         Text("Sign Up")
                             .foregroundStyle(Color.primaryDarkBlue)
                             .underline()
@@ -96,7 +96,7 @@ struct SignIn: View {
     
     func loginApiCall() async{
         
-        guard let url =  URL(string: "http://192.168.42.125:8081/api/v1/user/login/") else {
+        guard let url =  URL(string: "\(NetworkHelper.baseUrl)user/login/") else {
             return
         }
         
@@ -109,6 +109,9 @@ struct SignIn: View {
                 if let _ = response.username, let token = response.token {
                     print("Login successfull for \(String(describing: response.username))")
                     UserDefaults.standard.setValue(token, forKey: "token")
+                    
+                    
+                    
                 }else{
                     print("Login failed, Please Check details and try again!")
                     // Navigation to home page

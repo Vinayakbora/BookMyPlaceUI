@@ -14,7 +14,8 @@ struct SignUp: View {
     @State var username: String = ""
     @State  var password: String = ""
     @State private var isRegisterSuccess = false
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     let networkHelper = NetworkHelper()
     
     var body: some View {
@@ -27,13 +28,26 @@ struct SignUp: View {
                             VStack{
                                 Image("CardBackground")
                                     .resizable()
-                                    .frame(width: UIScreen.screenWidth, height: 200)
+                                    .frame(width: UIScreen.screenWidth, height: 180)
                                     .shadow(radius: 5)
                                 Spacer()
                             }
 
                             LinearGradient(colors: [.clear, .black], startPoint: .topTrailing, endPoint: .bottomLeading)
                             VStack{
+                                HStack{
+                                    Button {
+                                        print("Back button pressed")
+                                        presentationMode.wrappedValue.dismiss()
+                                    } label: {
+                                        Image(systemName: "chevron.backward")
+                                            .foregroundStyle(Color.white)
+                                    }
+                                    .frame(width: 55, height: 55)
+                                    Spacer()
+                                }
+                                .padding(.top, 44)
+
                                 Spacer()
                                 Text("Register").font(.system(size: 30))
                                     .foregroundStyle(.white)
@@ -43,7 +57,7 @@ struct SignUp: View {
 
                         })
                     }
-                    .frame(height: 200)
+                    .frame(height: 180)
                     
                     CustomTextFieldView(data: $email, title: "Enter Email")
                     CustomTextFieldView(data: $name, title: "Enter Name")
@@ -68,6 +82,7 @@ struct SignUp: View {
                     Spacer()
                 }
             }
+        .ignoresSafeArea(edges: .top)
         
     }
     
@@ -86,6 +101,7 @@ struct SignUp: View {
                 if responseData.id != nil {
                     isRegisterSuccess = true
                     print("Registraion is successfull for \(String(describing: responseData.name))")
+                    presentationMode.wrappedValue.dismiss()
                 }else{
                     print("Registration failed, Please Check details and try again!")
                 }

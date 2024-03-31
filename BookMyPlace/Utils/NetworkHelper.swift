@@ -14,7 +14,7 @@ enum NetworkError: Error {
 
 class NetworkHelper {
     
-    static let baseUrl = "http://locahost:8081/api/v1/"
+    static let baseUrl = "http://127.0.0.1:8081/api/v1/"
         
     func callNetworkMethod(for url: URL, with parameters: Codable? = nil, requestType: RequestType, completionHandler: @escaping((Data?, URLResponse?, Error?) -> ())) async {
         callNetworkMethodWithParameters(for: url, with: parameters, requestType: requestType) { data, response, error in
