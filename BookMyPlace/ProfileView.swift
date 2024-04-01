@@ -43,10 +43,11 @@ struct ProfileText: View {
     
     let networkHelper = NetworkHelper()
     
-    @State var fullName: String  = "Vinayak Bora"
-    @State var employeeId : String = "1001760"
-    @State var companyName: String = "Bajaj Markets"
+    @State var username: String  = UserDefaults.standard.value(forKey: "username") as? String ?? ""
+//    @State var employeeId : String = "1001760"
     @State  var campusName: String = "Smartworks"
+    @State var email: String = UserDefaults.standard.value(forKey: "email") as? String ?? ""
+    @State  var companyName: String = "Bajaj Markets"
     
     @State var userData: Profile?
     
@@ -97,7 +98,7 @@ struct ProfileText: View {
     }
     
     func getProfileDetails() async {
-        guard let url = URL(string: "http://192.168.42.125:8081/api/v1/profile/Mallika") else {
+        guard let url = URL(string: "\(NetworkHelper.baseUrl)profile/\(username)") else {
             return
         }
         

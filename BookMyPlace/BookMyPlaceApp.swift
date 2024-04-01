@@ -22,6 +22,13 @@ struct BookMyPlaceApp: App {
                     TabScreen()
                 }
             }
+            .onAppear(perform: {
+                if let _ = UserDefaults.standard.value(forKey: "token") as? String {
+                    appRootManager.currentRoot = .dashboard
+                } else {
+                    appRootManager.currentRoot = .login
+                }
+            })
             .environmentObject(appRootManager)
         }
     }

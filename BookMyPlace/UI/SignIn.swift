@@ -16,6 +16,7 @@ struct SignIn: View {
     @State var isPasswordValid : Bool = true
         
     let networkHelper = NetworkHelper()
+    @EnvironmentObject private var appRootManager : AppRootManager
     
     var body: some View {
         
@@ -96,7 +97,7 @@ struct SignIn: View {
     
     func loginApiCall() async{
         
-        guard let url =  URL(string: "\(NetworkHelper.baseUrl)user/login/") else {
+        guard let url =  URL(string: "\(NetworkHelper.baseUrl)user/login") else {
             return
         }
         
@@ -106,12 +107,16 @@ struct SignIn: View {
                 guard let responseData = data else { return }
                 let response = try JSONDecoder().decode(LoginResponse.self, from: responseData)
                 
-                if let _ = response.username, let token = response.token {
-                    print("Login successfull for \(String(describing: response.username))")
+                if let username = response.username,
+                    let token = response.token,
+                    let email = response.email {
+                    print("Login successfull for \(String(describing: username))")
                     UserDefaults.standard.setValue(token, forKey: "token")
-                    
-                    
-                    
+                    UserDefaults.standard.setValue(username, forKey: "username")
+                    UserDefaults.standard.setValue(email, forKey: "email")
+                    DispatchQueue.main.async {
+                        appRootManager.currentRoot = .dashboard
+                    }
                 }else{
                     print("Login failed, Please Check details and try again!")
                     // Navigation to home page

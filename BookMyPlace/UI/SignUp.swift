@@ -101,7 +101,9 @@ struct SignUp: View {
                 if responseData.id != nil {
                     isRegisterSuccess = true
                     print("Registraion is successfull for \(String(describing: responseData.name))")
-                    presentationMode.wrappedValue.dismiss()
+                    DispatchQueue.main.async {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }else{
                     print("Registration failed, Please Check details and try again!")
                 }

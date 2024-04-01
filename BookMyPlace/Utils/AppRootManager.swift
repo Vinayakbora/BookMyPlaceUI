@@ -9,7 +9,7 @@ import Foundation
 
 final class AppRootManager: ObservableObject {
     
-    @Published var currentRoot: eAppRoots = .login
+    @Published var currentRoot: eAppRoots = (((UserDefaults.standard.value(forKey: "token") as? String) ?? "") != "") ? .dashboard : .login
     
     enum eAppRoots {
         case login

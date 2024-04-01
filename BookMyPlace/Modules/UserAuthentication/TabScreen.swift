@@ -26,11 +26,11 @@ struct TabScreen: View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
             TabView(selection: $selectedTab) {
-                SignUp()
+                DashboardView()
                     .ignoresSafeArea()
                     .tag(Tab.home)
                 
-                SignIn()
+                ServiceList()
                     .ignoresSafeArea()
                     .tag(Tab.bookings)
                 
