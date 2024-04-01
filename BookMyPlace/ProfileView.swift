@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
     @State var isPresented = false
     
     var body: some View {
@@ -23,24 +24,36 @@ struct ProfileView: View {
 
 struct Header: View {
     var body: some View {
-        ZStack(alignment: .top) {
-            Rectangle()
-                .edgesIgnoringSafeArea(.top)
-                .frame(height: 150)
-                .foregroundColor(.primaryLightBlue)
-            Image("one_bajaj_logo")
-                .resizable()
-                .frame(width: 250, height: 250)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 10)
+        VStack{
+            ZStack(content: {
+                VStack{
+                    Image("CardBackground")
+                        .resizable()
+                        .frame(width: UIScreen.screenWidth, height: 200)
+                        .shadow(radius: 5)
+                    Spacer()
+                }
+
+                LinearGradient(colors: [.clear, .black], startPoint: .topTrailing, endPoint: .bottomLeading)
+                VStack{
+                    Spacer()
+                    Text("Profile").font(.system(size: 30))
+                        .foregroundStyle(.white)
+                        .bold()
+                        .padding()
+                }
+
+            })
         }
+        .frame(height: 200)
     }
 }
 
 
 struct ProfileText: View {
     
+    @EnvironmentObject private var appRootManager : AppRootManager
+
     let networkHelper = NetworkHelper()
     
     @State var username: String  = UserDefaults.standard.value(forKey: "username") as? String ?? ""
@@ -53,7 +66,6 @@ struct ProfileText: View {
     
     var body: some View {
        
-        Spacer()
         VStack(spacing: 50) {
             VStack {
                 Text("Employee Name")
@@ -86,6 +98,20 @@ struct ProfileText: View {
                 Text(campusName)
                     .font(.title)
             }
+            Button {
+                UserDefaults.standard.removeObject(forKey: "token")
+                appRootManager.currentRoot = .login
+                
+            }label: {
+                Text("Logout")
+                    .font(.system(size: 25))
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            }.frame(maxWidth: .infinity, maxHeight:50)
+                .background(LinearGradient(colors: [.black, .black.opacity(0.70)], startPoint: .top, endPoint: .bottom))
+                .foregroundColor(.white)
+                .cornerRadius(15)
+                .padding([.leading, .trailing, .top], 25)
+                .shadow(radius: 5)
         }.onAppear() {
             Task{
                 await self.getProfileDetails()

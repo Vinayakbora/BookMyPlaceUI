@@ -12,8 +12,8 @@ import SwiftUI
 struct DashboardView: View {
     
     @State var tap: Bool = false
-    @State var tappedItem: Int? = nil
-    private var data  = [1,2]
+    @State var tappedItem: String? = nil
+    private var data  = ["Meeting Spaces","Fun Zone"]
     private let adaptiveColumn = [
         GridItem(.flexible(minimum: 150, maximum: UIScreen.screenWidth))
     ]
@@ -74,7 +74,7 @@ struct DashboardView: View {
                             VStack(alignment: .leading){
                                 Spacer()
                                 HStack{
-                                    Text(String("Item"))
+                                    Text(String(item))
                                         .foregroundColor(.white)
                                         .font(Font.custom("Nunito-Black", size: 30))
                                         .padding(.bottom, 10)
