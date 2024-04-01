@@ -17,7 +17,7 @@ struct BookMyPlaceApp: App {
             Group {
                 switch appRootManager.currentRoot {
                 case .login:
-                    SignIn()
+                    FunZoneView()
                 case .dashboard:
                     TabScreen()
                 }

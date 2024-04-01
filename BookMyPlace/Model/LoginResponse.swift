@@ -18,3 +18,5 @@ struct LoginResponse : Codable {
     let email : String?
     let errorModel : String?
 }
+
+

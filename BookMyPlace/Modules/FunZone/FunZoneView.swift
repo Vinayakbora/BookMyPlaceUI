@@ -12,11 +12,18 @@ struct FunZoneView: View {
     @State var date = Date()
     @State var email : String = ""
     @State var selectedSlot : [TimeSlot] = TimeSlotsList().timeSlots
-    @State var playZone : [PlayZone] = PlayZoneList().playZones
-    @State var location : [Location] = LocationList().locations
+    @State var playZone : [PlayZone]?
+    @State var showAlert = false
+    @State var meetingRooms : [MeetingRoom]?
+    
+    @State var bookedRoom : BookMeetingRoomResponse?
+    @State var location : [Location]?
     @State private var selectedLocation: String? = nil
     @State private var selectedPlayZone: String? = nil
+    
     @State private var selectedTime: String? = nil
+    
+    let networkHelper = NetworkHelper()
     
     enum gradientColors {
         case blue
@@ -73,27 +80,31 @@ struct FunZoneView: View {
                         ScrollViewReader { (value: ScrollViewProxy) in
                             ScrollView(.horizontal){
                                 LazyHStack {
-                                    
-                                    ForEach(location, id:\.self) { items in
-                                        Button(action: {
-                                            if selectedLocation == items.name {
-                                                selectedLocation = nil
-                                                                            } else {
-                                                                                selectedLocation = items.name
-                                                                            }
-                                        }) {
-                                            Text(items.name)
-                                                .foregroundColor(.white)
-                                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                                                .font(.system(size: 13))
-                                                .bold()
-                                                .lineLimit(2)
-                                                .multilineTextAlignment(.center)
+                                    if !(location?.isEmpty ?? true){
+                                        if let locations = location{
+                                            ForEach(locations) { items in
+                                            Button(action: {
+                                                if selectedLocation == items.name {
+                                                    selectedLocation = nil
+                                                } else {
+                                                    selectedLocation = items.name
+                                                }
+                                            }) {
+                                                Text(items.name)
+                                                    .foregroundColor(.white)
+                                                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                                                    .font(.system(size: 13))
+                                                    .bold()
+                                                    .lineLimit(2)
+                                                    .multilineTextAlignment(.center)
+                                            }
+                                            .frame(width: 110, height: 40)
+                                            .background(selectedLocation == items.name ? LinearGradient(colors: gradientColors.blue.getGradient(), startPoint: .top, endPoint: .bottom) : LinearGradient(colors: gradientColors.green.getGradient(), startPoint: .top, endPoint: .bottom))
+                                            .cornerRadius(10)
                                         }
-                                        .frame(width: 110, height: 40)
-                                        .background(selectedLocation == items.name ? LinearGradient(colors: gradientColors.blue.getGradient(), startPoint: .top, endPoint: .bottom) : LinearGradient(colors: gradientColors.green.getGradient(), startPoint: .top, endPoint: .bottom))
-                                        .cornerRadius(10)
                                     }
+                                    }
+                                    
                                 }
                                 
                             }
@@ -112,31 +123,33 @@ struct FunZoneView: View {
                     HStack{
                         ScrollViewReader { (value: ScrollViewProxy) in
                             ScrollView(.horizontal){
-                                LazyHStack {
-                                    
-                                    ForEach(playZone, id:\.self) { items in
-                                        
-                                        Button(action: {
-                                            if selectedPlayZone == items.name {
-                                                selectedPlayZone = nil
-                                                                            } else {
-                                                                                selectedPlayZone = items.name
-                                                                            }
-                                            
-                                        }) {
-                                            Text(items.name)
-                                                .foregroundColor(.white)
-                                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                                                .font(.system(size: 13))
-                                                .bold()
-                                                .lineLimit(2)
-                                                .multilineTextAlignment(.center)
+                                if !(meetingRooms?.isEmpty ?? true){
+                                    LazyHStack {
+                                        if let meetingRooms_ = meetingRooms{
+                                            ForEach(meetingRooms_) { items in
+                                                
+                                                Button(action: {
+                                                    if selectedPlayZone == items.name {
+                                                        selectedPlayZone = nil
+                                                    } else {
+                                                        selectedPlayZone = items.name
+                                                    }
+                                                    
+                                                }) {
+                                                    Text(items.name ?? "")
+                                                        .foregroundColor(.white)
+                                                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                                                        .font(.system(size: 13))
+                                                        .bold()
+                                                        .lineLimit(2)
+                                                        .multilineTextAlignment(.center)
+                                                }
+                                                .frame(width: 110, height: 40)
+                                                .background(selectedPlayZone == items.name ? LinearGradient(colors: gradientColors.blue.getGradient(), startPoint: .top, endPoint: .bottom) : LinearGradient(colors: gradientColors.green.getGradient(), startPoint: .top, endPoint: .bottom))
+                                                .cornerRadius(10)
+                                            }
                                         }
-                                        .frame(width: 110, height: 40)
-                                        .background(selectedPlayZone == items.name ? LinearGradient(colors: gradientColors.blue.getGradient(), startPoint: .top, endPoint: .bottom) : LinearGradient(colors: gradientColors.green.getGradient(), startPoint: .top, endPoint: .bottom))
-                                        .cornerRadius(10)
                                     }
-                                    
                                 }
                                 
                             }
@@ -206,7 +219,11 @@ struct FunZoneView: View {
             HStack{
                 Spacer()
                 Button {
-                    
+                    if selectedLocation != nil && selectedPlayZone != nil  && selectedTime != nil {
+                        Task{
+                            await bookMeetingRoom()
+                        }
+                    }
                 }label: {
                     Text("Confirm Booking")
                         .font(.system(size: 15))
@@ -218,8 +235,124 @@ struct FunZoneView: View {
                     .padding()
                 Spacer()
             }
+        }.onAppear{
+            Task{
+                await getAllLocations()
+            }
+        }
+        .onChange(of: selectedLocation) { newLocation  in
+            //call Api to get meeting rooms by location
+            Task{
+                await getMeetingRoomsByLocation()
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    func getAllLocations() async{
+        guard let url =  URL(string: "\(NetworkHelper.baseUrl)location") else {
+            return
+        }
+        
+        
+        
+        await networkHelper.callNetworkMethod(for: url, requestType: .get, completionHandler: {data, response, error in
+            
+            do{
+                guard let responseData = data else { return }
+                let response = try JSONDecoder().decode(LocationResponse.self, from: responseData)
+                
+                if let isLocations = response.data?.isEmpty, isLocations{
+                    print("No Locations Available")
+                }else{
+                    location = response.data
+                    
+                }
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+        )
+    }
+    
+    
+    func getMeetingRoomsByLocation() async{
+        
+        let selectedLocationid = location?.filter({ location in
+            return location.name == selectedLocation
+        }).first?.id
+        
+        if selectedLocationid != nil{
+            guard let url =  URL(string: "\(NetworkHelper.baseUrl)meetingroom/by-location") else {
+                return
+            }
+            
+            await networkHelper.callNetworkMethod(for: url, with : MeetingRoomRequest(locationId: selectedLocationid),  requestType: .post, completionHandler: {data, response, error in
+                
+                do{
+                    guard let responseData = data else { return }
+                    let response = try JSONDecoder().decode(MeetingRoomResponse.self, from: responseData)
+                    
+                    if let isMeetingRoom = response.data?.isEmpty, isMeetingRoom {
+                        
+                        print("Meeting Room Not found by Location")
+                        
+                    }else{
+                        
+                        meetingRooms = response.data
+                    }
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+            )
         }
     }
+    
+    func bookMeetingRoom() async{
+        
+        let selectedMeetingid = meetingRooms?.filter({ meetingRoom in
+            return meetingRoom.name == selectedPlayZone
+        }).first?.id
+        
+        if selectedMeetingid != nil{
+            guard let url =  URL(string: "\(NetworkHelper.baseUrl)bookroom") else {
+                return
+            }
+            
+            
+            
+            var startTime = selectedTime?.components(separatedBy: " - ")[0] ?? ""
+            var endTime = selectedTime?.components(separatedBy: " - ")[1] ?? ""
+            
+            var bookingDate = DateFormatUtility.shortString(fromDate: date)
+            
+            await networkHelper.callNetworkMethod(for: url, with : BookRoomRequest(meetingRoom: MeetingRoomTemp(id : selectedMeetingid!), userEmail: "", startTime: startTime, endTime: endTime, bookingDate: bookingDate),  requestType: .post, completionHandler: {data, response, error in
+                
+                do{
+                    guard let responseData = data else { return }
+                    let response = try JSONDecoder().decode(BookMeetingRoomResponse.self, from: responseData)
+                    let meetingId = response.data.meetingRoom.id
+                    if meetingId > 0{
+                        
+                        
+                        
+                    }else{
+                        
+                       
+                    }
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+            )
+        }
+    }
+    
+    
 }
 
 struct TimeSlot: Identifiable, Hashable {
@@ -254,19 +387,21 @@ struct PlayZoneList{
     ]
 }
 
-struct Location: Identifiable, Hashable {
-    let id: UUID
+struct Location: Identifiable, Decodable {
+    let id: Int
     let name: String
+    let city : String
+    let timestamp : String
 }
 
-struct LocationList{
-    var locations : [Location] = [
-        Location(id: UUID(), name: "SmartWorks"),
-        Location(id: UUID(), name: "B1"),
-        Location(id: UUID(), name: "B2"),
-        Location(id: UUID(), name: "B3")
-    ]
-}
+//struct LocationList{
+//    var locations : [Location] = [
+//        Location(id: UUID(), name: "SmartWorks"),
+//        Location(id: UUID(), name: "B1"),
+//        Location(id: UUID(), name: "B2"),
+//        Location(id: UUID(), name: "B3")
+//    ]
+//}
 
 
 
