@@ -37,9 +37,10 @@ class NetworkHelper {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("keep-alive", forHTTPHeaderField: "Connection")
-        if token != nil && token != "" {
-            request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
-        }
+        request.setValue("Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJhZ180MiIsImlhdCI6MTcxMTk0MzA1MiwiZXhwIjoxNzExOTQ2NjUyfQ.g8IFpKTgh97H3y3FO8Edx7jwYophQTEDdH_XqEG2A-0", forHTTPHeaderField: "Authorization")
+//        if token != nil && token != "" {
+//            request.setValue("Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXJhZ180MiIsImlhdCI6MTcxMTk0MzA1MiwiZXhwIjoxNzExOTQ2NjUyfQ.g8IFpKTgh97H3y3FO8Edx7jwYophQTEDdH_XqEG2A-0", forHTTPHeaderField: "Authorization")
+//        }
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             completionHandler(data, response, error)
         }
